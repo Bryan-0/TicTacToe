@@ -4,5 +4,5 @@
 
 *O wins*
 
-are saved here in two different .txt files.
+are saved here in two different .txt files. (Auto-generated when you play for the first time)
 You can see this stats in-game.
