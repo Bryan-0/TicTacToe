@@ -115,7 +115,7 @@ def reply(answer = ''):
 
 def gameMusic():
 
-	winsound.PlaySound("music\\impact.wav", winsound.SND_ASYNC | winsound.SND_ALIAS )
+	winsound.PlaySound("music\\impact.wav", winsound.SND_LOOP + winsound.SND_ASYNC | winsound.SND_ALIAS )
 	# winsound.PlaySound(None, winsound.SND_ASYNC) to stop playing
 
 
