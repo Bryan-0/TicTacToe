@@ -113,9 +113,62 @@ def reply(answer = ''):
 	else:
 		return False
 
+
+def updateRank(marker):
+
+	load_p1 = False
+	load_p2 = False
+
+	#### Player 1
+	try:
+		with open('ranking\\p1.txt', mode = 'r') as f:
+			p1Points = f.read();
+			p1ToInt = int(p1Points)
+	except IOError:
+		load_p1 = True
+
+	###### Creates new progress in case program doesn't detect one for P1
+	if load_p1:
+		p1ToInt = 0
+		with open('ranking\\p1.txt', mode = 'w') as f:
+			f.write('0');
+
+	#### Player 2
+	try:
+		with open('ranking\\p2.txt', mode = 'r') as f:
+			p2Points = f.read();
+			p2ToInt = int(p2Points)
+	except IOError:
+		load_p2 = True
+
+	###### Creates new progress in case program doesn't detect one for P2
+	if load_p2:
+		p2ToInt = 0
+		with open('ranking\\p2.txt', mode = 'w') as f:
+			f.write('0');
+
+
+
+	if marker == 'X':
+		p1ToInt += 1
+		p1PointsToStr = str(p1ToInt)
+
+		with open('ranking\\p1.txt', mode = 'w') as f:
+			f.write(p1PointsToStr);
+			
+
+	elif marker == 'O':
+		p2ToInt += 1
+		p2PointsToStr = str(p2ToInt)
+
+		with open('ranking\\p2.txt', mode = 'w') as f:
+			f.write(p2PointsToStr);
+
+
 def gameMusic():
 
 	winsound.PlaySound("music\\impact.wav", winsound.SND_LOOP + winsound.SND_ASYNC | winsound.SND_ALIAS )
+
 	# winsound.PlaySound(None, winsound.SND_ASYNC) to stop playing
 
 
@@ -162,6 +215,7 @@ while True:
 
 			display_board(game_board)
 			if winCheck(game_board):
+				updateRank(p1)
 				break
 			if is_Board_Full(game_board):
 				print("MATCH TIED")
@@ -183,10 +237,25 @@ while True:
 
 			display_board(game_board)
 			if winCheck(game_board):
+				updateRank(p2)
 				break
 			if is_Board_Full(game_board):
 				print("MATCH TIED")
 				break
+
+
+	with open('ranking\\p1.txt', mode = 'r') as f:
+			showP1Points = f.read();
+
+	with open('ranking\\p2.txt', mode = 'r') as f:
+			showP2Points = f.read();
+
+
+	print(" ")
+	print("RANKING: ")
+	print("X Wins: {sp1} !".format(sp1 = showP1Points))
+	print("O Wins: {sp2} !".format(sp2 = showP2Points))
+	print(" ")
 
 	answer = input("Do you want to play again? (Yes or No) ")
 
