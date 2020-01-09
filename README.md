@@ -10,6 +10,6 @@ Every number is a position where you can place 'X' or 'O'.
 
 # Run Game
 
-  1. Open cmd
-  2. Cd 'location of this file'
-  3. python TicTacToe.py
+  *1. Open CMD*
+  *2. Cd 'location of this file'*
+  *3. python TicTacToe.py*
