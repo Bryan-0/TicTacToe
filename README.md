@@ -1,6 +1,9 @@
 # TicTacToe
 TicTacToe Game in Python!
 
+# Download Game
+
+[Download Game](http://www.mediafire.com/file/opvxpul6v7nrpyy/TicTacToeGame.rar)
 
 # The positions you type is equal to the numpad of a keyboard for example:
 
