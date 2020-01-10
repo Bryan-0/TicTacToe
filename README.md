@@ -1,7 +1,7 @@
 # TicTacToe
 TicTacToe Game in Python!
 
-# Download Game
+# Download Game .exe
 
 [Download Game](http://www.mediafire.com/file/opvxpul6v7nrpyy/TicTacToeGame.rar)
 
